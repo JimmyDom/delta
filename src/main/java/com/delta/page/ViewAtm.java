@@ -26,5 +26,6 @@ public class ViewAtm extends MainPage {
     private final SelenideElement atmBusinessTypeField = $(By.xpath("//span[text() = \"АТМ бизнес-тип\"]"));
     private final SelenideElement placementCodeField = $(By.xpath("//span[text() = \"Код места размещения\"]"));
     private final SelenideElement currencyField = $(By.xpath("//span[text() = \"Валютность\"]"));
+    private final SelenideElement limitsField = $(By.xpath("//span[text() = \"Лимиты\"]"));
 
 }

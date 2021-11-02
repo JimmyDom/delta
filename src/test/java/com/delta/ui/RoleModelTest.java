@@ -1,5 +1,6 @@
 package com.delta.ui;
 
+import com.delta.config.Role;
 import com.delta.page.SearchAtm;
 import com.delta.page.ViewAtm;
 import com.delta.service.BasePageService;
@@ -7,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
-
+@DisplayName("UI проверка отображения вкладок для пользователей с разными ролями")
 class RoleModelTest {
     BasePageService service = new BasePageService();
     SearchAtm searchAtm = new SearchAtm();
@@ -16,7 +17,7 @@ class RoleModelTest {
 
     @DisplayName("AAA-T9 Отображение деталей ATM для пользователя с правами ATM Logistic")
     @Test void checkAtmLogisticRole() {
-        service.loginUser("Logistic");
+        service.loginUser(Role.LOGISTIC);
         service.clickButton(searchAtm.getSearchAtmMenu());
         service.clickButton(searchAtm.getSearchButton());
         service.clickButton(searchAtm.getDataRow1());
@@ -35,7 +36,7 @@ class RoleModelTest {
 
     @DisplayName("AAA-T10 Отображение деталей ATM для пользователя с правами Incasso")
     @Test void checkAtmIncassoRole() {
-        service.loginUser("Incasso");
+        service.loginUser(Role.INCASSO);
         service.clickButton(searchAtm.getSearchAtmMenu());
         service.clickButton(searchAtm.getSearchButton());
         service.clickButton(searchAtm.getDataRow1());
@@ -54,7 +55,7 @@ class RoleModelTest {
 
     @DisplayName("AAA-T12 Отображение деталей ATM для пользователя с правами Security")
     @Test void checkAtmSecurityRole() {
-        service.loginUser("Security");
+        service.loginUser(Role.SECURITY);
         service.clickButton(searchAtm.getSearchAtmMenu());
         service.clickButton(searchAtm.getSearchButton());
         service.clickButton(searchAtm.getDataRow1());
@@ -72,7 +73,7 @@ class RoleModelTest {
 
     @DisplayName("AAA-T13 Отображение деталей ATM для пользователя с правами Business")
     @Test void checkAtmBusinessRole() {
-        service.loginUser("Business");
+        service.loginUser(Role.BUSINESS);
         service.clickButton(searchAtm.getSearchAtmMenu());
         service.clickButton(searchAtm.getSearchButton());
         service.clickButton(searchAtm.getDataRow1());
@@ -91,7 +92,7 @@ class RoleModelTest {
 
     @DisplayName("AAA-T14 Отображение деталей ATM для пользователя с правами Telecom")
     @Test void checkAtmTelecomRole() {
-        service.loginUser("Telecom");
+        service.loginUser(Role.TELECOM);
         service.clickButton(searchAtm.getSearchAtmMenu());
         service.clickButton(searchAtm.getSearchButton());
         service.clickButton(searchAtm.getDataRow1());
@@ -110,7 +111,7 @@ class RoleModelTest {
 
     @DisplayName("AAA-T15 Отображение деталей ATM для пользователя с правами Read User")
     @Test void checkAtmReadUserRole() {
-        service.loginUser("ReadUser");
+        service.loginUser(Role.READ_USER);
         service.clickButton(searchAtm.getSearchAtmMenu());
         service.clickButton(searchAtm.getSearchButton());
         service.clickButton(searchAtm.getDataRow1());
@@ -129,7 +130,7 @@ class RoleModelTest {
 
     @DisplayName("AAA-T17 Отображение деталей ATM для пользователя с правами Technical support")
     @Test void checkAtmTechSupportRole() {
-        service.loginUser("TechSupport");
+        service.loginUser(Role.TECH_SUPPORT);
         service.clickButton(searchAtm.getSearchAtmMenu());
         service.clickButton(searchAtm.getSearchButton());
         service.clickButton(searchAtm.getDataRow1());
@@ -148,7 +149,7 @@ class RoleModelTest {
 
     @DisplayName("AAA-T19 Отображение деталей ATM для пользователя с правами Administrator")
     @Test void checkAtmAdminRole() {
-        service.loginUser("Admin");
+        service.loginUser(Role.ADMIN);
         service.clickButton(searchAtm.getSearchAtmMenu());
         service.clickButton(searchAtm.getSearchButton());
         service.clickButton(searchAtm.getDataRow1());

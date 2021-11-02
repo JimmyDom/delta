@@ -3,6 +3,7 @@ package com.delta.service;
 
 import com.codeborne.selenide.SelenideElement;
 import com.delta.config.Credential;
+import com.delta.config.Role;
 import com.delta.page.MainPage;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -11,14 +12,14 @@ public class BasePageService extends CommonService{
     private final Credential credential = new Credential();
     private final MainPage mainPage = new MainPage();
 
-    private String getLogin(String user) {
-        return credential.getUserCredential().get(String.format("%sLogin", user));
+    private String getLogin(Role role) {
+        return credential.getUserCredential().get(role + "_LOGIN");
     }
-    private String getPass(String user) {
-        return credential.getUserCredential().get(String.format("%sPass", user));
+    private String getPass(Role role) {
+        return credential.getUserCredential().get(role + "_PASS");
     }
 
-    public void loginUser(String user) {
+    public void loginUser(Role user) {
         open(credential.getUrl());
         localStorage().clear();
         refresh();
